@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>GCB Welcome</title>
+    
+</head>
+<body class="signs">
+    <!-- landing page -->
+    <div class="props">
+        <img class="signpic" src="{% static 'images/gcb1.jpg' %}" alt="">
+        <div class="shade"></div>
+    </div>
+    <div class="posform">
+        <p class="signtext"></p>
+        <div id="landingpage">        
+            <p id="welcometext">Welcome To The GCB Attendance Register web app</p>
+            <form class="indexform"  action="signin">
+                <a href="{% url 'signin' %}"><button type="" id="landsignin">Sign in</button></a>
+            </form>
+            <form class="indexform"  action="signup">
+                <a href="{% url 'signup' %}"><button type="" id="landsignup">Sign up</button></a>
+            </form>
+        </div>
+    </div>
+   
+</body>
+</html>
+    
+    

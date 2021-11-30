@@ -1,0 +1,58 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/stylehome.css' %}">
+    <title>GCB AR</title>
+    
+</head>
+<body">
+    <div id="navbar">
+        <div id="navbar1">
+            <img id="more" onclick="openNav()" src="{% static 'images/menu.png' %}" alt="">
+        </div>
+        <div id="navbar2"></div>
+    </div>
+    <div id="mynav" class="sidenav">
+        <div class="props">
+            <div class="shade"></div>
+        </div>
+        <img id="more1" onclick="closeNav()" src="{% static 'images/menu.png' %}" alt="">
+        <span>{{user.username}}</span>
+        <span>About</span>
+        <span>Clients</span>
+        <span>Contact</span>
+        {% if user.is_authenticated %}
+        <a href="logout"><span>Log Out</span></a>
+        {% else %}
+        <a href="{% url 'signin' %} "><span >Log In</span></a>
+        {% endif %}
+    </div>
+    <div id="mainArea">
+        <div class="weltext">
+            {% if user.is_authenticated %}
+            <h1>welcome, {{user.username}}.</h1>
+            {% else %}
+            <h1>Welcome, Sign In to access full functionallity</h1>
+            {% endif %}
+            <h1>This is the GCB Attendance Register site for employees</h1>
+        </div>
+        
+        <div id="countdown">
+            <div id="countdown-container">
+                <span id="days">0d</span> : <span id="hours">0h</span> :
+                <span id="minutes">0m</span> : <span id="seconds">0s</span>
+            </div>
+        </div>
+
+    </div>
+    <footer class="myfooter">
+        
+    </footer>
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>

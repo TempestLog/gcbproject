@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>GCB AR</title>
+    
+</head>
+<body class="signs">
+<!-- landing page -->
+	<div class="props">
+		<img class="signpic" src="{% static 'images/gcb1.jpg' %}" alt="">
+        <div class="shade"></div>
+	</div>
+    <div class="posform">
+        <p class="signtext"></p>
+        <div class="container-f">
+            <div class="header">
+                <h2>Sign In</h2>
+            </div>
+            <form method="POST" id="form" class="form" action="signin">
+                {% csrf_token %}
+                {% for messge in messages %}
+                <style>
+                    #error-txt{
+                        color: #721c24;
+                        background-color: #f8d7da;
+                        padding: 8px 10px;
+                        text-align: center;
+                        border-radius: 5px;
+                        margin-bottom: 10px;
+                        border: 1px solid #f5c6cb;
+                    }
+                </style>
+                <div id="error-txt">{{messge}}</div>
+                {% endfor %}
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Username" id="username" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password" id="password"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <small><i>Forgot Password? <a href="#">reset</a></i></small>
+                <button type="submit" class="ac-submit">Sign in</button>
+                <br>
+                <small><i>Don't have an account? <b><a href="{% url 'signup' %}">sign up</a></b></i></small>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+

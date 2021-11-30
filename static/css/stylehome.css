@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserra", monospace;
+  }
+
+body {
+    background-color: #263238;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+#navbar1 {
+    height: 60px;
+    width: 10%;
+    background-color: #37474f;
+}
+
+#navbar2 {
+    height: 60px;
+    width: 90%;
+    background-color: #37474f;
+}
+
+.sidenav { 
+    height: 100%;
+    width: 0; /* this width will be changed with javascript*/
+    position: fixed; /*stay in place*/
+    z-index: 1; /*stay on top*/
+    top: 0; /*stay at the top of the page*/
+    left: 0; /*stay at the left of the page*/
+    background-color: #455a64;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+#more1 {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    margin-left: 70px;
+}
+
+.sidenav span {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    z-index: 2;
+    color: #ffc400;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav::-webkit-scrollbar {
+    width: opx;
+}
+
+#mainArea {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.weltext {
+    color: #ffc400;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+#countdown-container {
+    font-family: "Fira Sans", sans-serif; /*changes the text font in the divelement */
+    display: inline-block; /*displays divs on a line*/
+    padding: 30px; /*creates 30px space between the content of the div element and the walls of the div element*/
+    background: #546e7a;
+    color: white; /*changes the text color in the div element*/
+}
+
+#countdown {
+    color: white; /*changes the text color in the div element*/
+    font-family: "Fira Sans", sans-serif; /*changes the text font in the divelement */
+    display: flex; /*displays divs on a line*/
+    width: 300px; /*gives the div element a width of 300px*/
+    margin: auto; /*gives 20px space at the top and bottom of the div element*/
+    border-radius: 5px; /*curves the edges of the div element by 5px;*/
+    background: #546e7a; /*gives the div element a background color*/
+    align-items: center;
+    justify-content: center;
+}
+
+#countdown span {
+    font-weight: bold; /*boldens text in the span element*/
+    font-size: 30px; /*changes the text size in the span element*/
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  
