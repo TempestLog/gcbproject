@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from io import BytesIO
+
 
 
 # Create your views here.
@@ -50,6 +52,8 @@ def signup(request):
 
     
 def home(request):
+    context = ()
+    
     return render(request, 'home.html')
 
 def logout(request):

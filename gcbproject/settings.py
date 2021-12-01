@@ -78,11 +78,8 @@ WSGI_APPLICATION = 'gcbproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'gcbar',
-        'USER': 'postgres',
-        'PASSWORD': 'adminadmin',
-        'HOST': 'localhost'
     }
 }
 
